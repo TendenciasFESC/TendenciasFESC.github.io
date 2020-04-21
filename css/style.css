@@ -22,7 +22,7 @@ input:hover, input:focus {
 
 /* line 15, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
 .gray_bg {
-  background-color: #f7f7f7;
+  background-color: goldenrod;
 }
 
 /* line 18, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
@@ -166,7 +166,7 @@ a {
 
 /* line 81, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
 a:hover {
-  color: #fc4600 !important;
+  color: powderblue !important;
   text-decoration: none;
   -webkit-transition: 0.5s;
   transition: 0.5s;
@@ -180,7 +180,7 @@ h1, h2, h3, h4, h5, h6 {
 
 /* line 93, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
 p {
-  color: #888888;
+  color: goldenrod;
   font-family: "Lora", serif;
   line-height: 1.929;
   font-size: 15px;
@@ -442,7 +442,7 @@ ul {
 @media (min-width: 1200px) {
   /* line 250, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
   .border_top {
-    border-top: 5px solid #ffe4e4;
+    border-top: 5px solid goldenrod;
     width: 1110px;
     margin: 0 auto;
   }
@@ -451,7 +451,7 @@ ul {
 @media only screen and (min-width: 992px) and (max-width: 1200px) {
   /* line 257, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
   .border_top {
-    border-top: 5px solid #ffe4e4;
+    border-top: 5px solid goldenrod;
     max-width: 930px;
     margin: 0 auto;
   }
@@ -460,7 +460,7 @@ ul {
 @media only screen and (min-width: 768px) and (max-width: 991px) {
   /* line 264, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
   .border_top {
-    border-top: 5px solid #ffe4e4;
+    border-top: 5px solid goldenrod;
     max-width: 690px;
     margin: 0 auto;
   }
@@ -469,7 +469,7 @@ ul {
 @media only screen and (min-width: 576px) and (max-width: 767px) {
   /* line 271, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
   .border_top {
-    border-top: 5px solid #ffe4e4;
+    border-top: 5px solid goldenrod;
     max-width: 510px;
     margin: 0 auto;
   }
@@ -478,7 +478,7 @@ ul {
 @media (max-width: 576px) {
   /* line 278, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_common.scss */
   .border_top {
-    border-top: 5px solid #ffe4e4;
+    border-top: 5px solid goldenrod;
     width: 90%;
     margin: 0 auto;
   }
@@ -1317,7 +1317,7 @@ ul {
 
 /* line 662, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
 .blog_right_sidebar .single_sidebar_widget {
-  background: #fbf9ff;
+  background: powderblue;
   padding: 30px;
   margin-bottom: 30px;
 }
@@ -2372,7 +2372,7 @@ ul {
     left: 0;
     top: 71px;
     width: 100%;
-    background-color: #fff;
+    background-color: goldenrod;
     text-align: center !important;
   }
   /* line 220, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_menu.scss */
