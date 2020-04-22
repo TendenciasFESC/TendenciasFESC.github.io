@@ -1257,7 +1257,7 @@ ul {
   left: 10px;
   display: block;
   color: #fff;
-  background-color: #fc4600;
+  background-color: gold;
   padding: 8px 15px;
   border-radius: 5px;
 }
@@ -1724,7 +1724,7 @@ ul {
 
 /* line 1203, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
 .single-post-area .blog-author a:hover {
-  color: #fc4600;
+  color: gold;
 }
 
 /* line 1208, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
@@ -2710,7 +2710,7 @@ ul {
 
 /* line 3, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
 .post_2 a:hover {
-  color: #fc4600 !important;
+  color: gold !important;
 }
 
 /* line 6, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
@@ -2731,7 +2731,7 @@ ul {
 
 /* line 17, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
 .post_2 .post_text_1 h3:hover {
-  color: #fc4600;
+  color: gold
 }
 
 @media only screen and (min-width: 576px) and (max-width: 767px) {
@@ -2744,7 +2744,7 @@ ul {
 /* line 33, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
 .post_2 .post_text_1 h5 {
   font-size: 11px;
-  color: #fc4600;
+  color: gold;
   text-transform: uppercase;
   font-family: "Lora", serif;
   font-weight: 600;
@@ -2769,7 +2769,7 @@ ul {
 
 /* line 53, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
 .post_2 .post_text_1 h5:hover {
-  color: #fc4600;
+  color: gold;
 }
 
 /* line 57, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
@@ -2911,7 +2911,7 @@ ul {
   border-top-right-radius: 10px;
   padding: 15px 30px;
   background-color: #fff;
-  color: #fc4600;
+  color: gold;
   text-transform: uppercase;
   font-size: 11px;
   font-weight: 600;
@@ -2991,7 +2991,7 @@ ul {
 
 /* line 207, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_post_style.scss */
 .post_1 .single_post_text a h5 {
-  color: #fc4600;
+  color: gold;
   margin-bottom: 17px;
 }
 
@@ -3127,7 +3127,7 @@ ul {
 
 /* line 41, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_contact.scss */
 .contact-info .media-body h3 a:hover {
-  color: #fc4600;
+  color: gold;
 }
 
 /* line 47, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_contact.scss */
@@ -3314,7 +3314,7 @@ ul {
 /* line 60, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .sidebar_widget .form-control:focus {
   outline: none !important;
-  border-color: darkgoldenrod;
+  border-color: goldenrod;
 }
 
 /* line 65, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
