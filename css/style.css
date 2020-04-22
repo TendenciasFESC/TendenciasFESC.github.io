@@ -1184,12 +1184,12 @@ ul {
 
 /* line 543, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
 .blog_details a {
-  color: #ff8b23;
+  color: gold;
 }
 
 /* line 546, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
 .blog_details a:hover {
-  color: #fc4600;
+  color: gold;
 }
 
 /* line 551, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
@@ -1317,7 +1317,7 @@ ul {
 
 /* line 662, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_blog.scss */
 .blog_right_sidebar .single_sidebar_widget {
-  background: powderblue;
+  background: goldenrod;
   padding: 30px;
   margin-bottom: 30px;
 }
@@ -3314,12 +3314,12 @@ ul {
 /* line 60, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .sidebar_widget .form-control:focus {
   outline: none !important;
-  border-color: #e9ecee;
+  border-color: darkgoldenrod;
 }
 
 /* line 65, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .sidebar_widget .btn {
-  background-color: powderblue;
+  background-color: goldenrod;
   color: #fff;
   width: 50px;
   margin-left: 10px;
@@ -3351,19 +3351,19 @@ ul {
 
 /* line 89, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .category ul li a:hover, .all_post .category ul li span:hover {
-  color: #fff !important;
+  color: gold !important;
 }
 
 /* line 93, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .category ul li:hover {
-  background-color: #00acfc;
+  background-color: goldenrod;
   -webkit-transition: 0.5s;
   transition: 0.5s;
 }
 
 /* line 96, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .category ul li:hover a, .all_post .category ul li:hover span {
-  color: #fff;
+  color: goldenrod;
 }
 
 /* line 104, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
@@ -3395,7 +3395,7 @@ ul {
 
 /* line 124, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_all_post.scss */
 .all_post .tags ul li a:hover {
-  border: 1px solid #fc4600;
+  border: 1px solid darkgoldenrod;
   background-color: powderblue;
   color: #fff !important;
 }
@@ -3681,7 +3681,7 @@ ul {
 
 /* line 38, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_footer.scss */
 .footer-area .single-footer-widget ul li a:hover {
-  color: #fc4600;
+  color: goldenrod;
 }
 
 /* line 44, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_footer.scss */
@@ -3711,7 +3711,7 @@ ul {
 
 /* line 68, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_footer.scss */
 .footer-area .single-footer-widget .click-btn {
-  background-color: #fc4600;
+  background-color: goldenrod;
   color: #fff;
   border-radius: 0;
   border-top-left-radius: 0px;
@@ -3822,7 +3822,7 @@ sup,
 sub,
 u,
 del {
-  color: #fc4600;
+  color: goldenrod;
 }
 
 /* line 93, /Applications/MAMP/htdocs/palash/cl/july 2019/191 Lifeleck Blog/191 Lifeleck Blog html/sass/_elements.scss */
