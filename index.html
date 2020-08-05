@@ -1,413 +1,268 @@
-<!doctype html>
-<html lang="en">
-
+<!DOCTYPE html>
+<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
 <head>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <title>Tendencias Universitarias || INICIO</title>
-    <link rel="icon" href="img/favicon.png">
-    <!-- Bootstrap CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
-    <!-- animate CSS -->
-    <link rel="stylesheet" href="css/animate.css">
-    <!-- owl carousel CSS -->
-    <link rel="stylesheet" href="css/owl.carousel.min.css">
-    <!-- themify CSS -->
-    <link rel="stylesheet" href="css/themify-icons.css">
-    <!-- flaticon CSS -->
-    <link rel="stylesheet" href="css/liner_icon.css">
-    <link rel="stylesheet" href="css/search.css">
-    <!-- style CSS -->
-    <link rel="stylesheet" href="css/style.css">
+	<meta charset='utf-8' />
+	<meta name='viewport' content='width=device-width, user-scalable=no' />
+	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
+	<title>Pong</title>
+	<style type='text/css'>
+
+		body {
+			touch-action: none;
+			margin: 0;
+			border: 0 none;
+			padding: 0;
+			text-align: center;
+			background-color: black;
+		}
+
+		#canvas {
+			display: block;
+			margin: 0;
+			color: white;
+		}
+
+		#canvas:focus {
+			outline: none;
+		}
+
+		.godot {
+			font-family: 'Noto Sans', 'Droid Sans', Arial, sans-serif;
+			color: #e0e0e0;
+			background-color: #3b3943;
+			background-image: linear-gradient(to bottom, #403e48, #35333c);
+			border: 1px solid #45434e;
+			box-shadow: 0 0 1px 1px #2f2d35;
+		}
+
+
+		/* Status display
+		 * ============== */
+
+		#status {
+			position: absolute;
+			left: 0;
+			top: 0;
+			right: 0;
+			bottom: 0;
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			/* don't consume click events - make children visible explicitly */
+			visibility: hidden;
+		}
+
+		#status-progress {
+			width: 366px;
+			height: 7px;
+			background-color: #38363A;
+			border: 1px solid #444246;
+			padding: 1px;
+			box-shadow: 0 0 2px 1px #1B1C22;
+			border-radius: 2px;
+			visibility: visible;
+		}
+
+		@media only screen and (orientation:portrait) {
+			#status-progress {
+				width: 61.8%;
+			}
+		}
+
+		#status-progress-inner {
+			height: 100%;
+			width: 0;
+			box-sizing: border-box;
+			transition: width 0.5s linear;
+			background-color: #202020;
+			border: 1px solid #222223;
+			box-shadow: 0 0 1px 1px #27282E;
+			border-radius: 3px;
+		}
+
+		#status-indeterminate {
+			visibility: visible;
+			position: relative;
+		}
+
+		#status-indeterminate > div {
+			width: 4.5px;
+			height: 0;
+			border-style: solid;
+			border-width: 9px 3px 0 3px;
+			border-color: #2b2b2b transparent transparent transparent;
+			transform-origin: center 21px;
+			position: absolute;
+		}
+
+		#status-indeterminate > div:nth-child(1) { transform: rotate( 22.5deg); }
+		#status-indeterminate > div:nth-child(2) { transform: rotate( 67.5deg); }
+		#status-indeterminate > div:nth-child(3) { transform: rotate(112.5deg); }
+		#status-indeterminate > div:nth-child(4) { transform: rotate(157.5deg); }
+		#status-indeterminate > div:nth-child(5) { transform: rotate(202.5deg); }
+		#status-indeterminate > div:nth-child(6) { transform: rotate(247.5deg); }
+		#status-indeterminate > div:nth-child(7) { transform: rotate(292.5deg); }
+		#status-indeterminate > div:nth-child(8) { transform: rotate(337.5deg); }
+
+		#status-notice {
+			margin: 0 100px;
+			line-height: 1.3;
+			visibility: visible;
+			padding: 4px 6px;
+			visibility: visible;
+		}
+	</style>
+
 </head>
-
 <body>
-    <!--::header part start::-->
-    <header class="main_menu">
-        <div class="container">
-            <div class="row align-items-center">
-                <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg navbar-light">
-                        <a class="navbar-brand" href="index.html"> <img src="img/logotend.png" alt="logo"> </a>
-                        <button class="navbar-toggler" type="button" data-toggle="collapse"
-                            data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
-                            aria-expanded="false" aria-label="Toggle navigation">
-                            <span class="navbar-toggler-icon"></span>
-                        </button>
-
-                        <div class="collapse navbar-collapse main-menu-item justify-content-center"
-                            id="navbarSupportedContent">
-                            <ul class="navbar-nav">
-                                <li class="nav-item active">
-                                    <a class="nav-link" href="index.html">Inicio</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="archive.html">Estilo de vida</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="category.html"> Entretenimiento</a>
-                                </li>
-                                <li class="nav-item">
-                                    <a class="nav-link" href="contact.html">Divulgacion</a>
-                                </li>
-                            </ul>
-                        </div>
-                    </nav>
-                </div>
-            </div>
-        </div>
-    </header>
-    <!-- Header part end-->
-
-    <!-- banner post start-->
-    <section class="banner_post">
-        <div class="container-fluid">
-            <div class="row justify-content-between">
-                <div class="banner_post_1 banner_post_bg_1">>
-                </div><div class="banner_post_1 banner_post_bg_2">
-                </div>
-                <div class="banner_post_1 banner_post_bg_3">
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- banner post end-->
-
-    <!-- feature_post start-->
-    <section class="all_post section_padding">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-8">
-                    <div class="row">
-                    
-                        <!--Conferencia-->
-                        <div class="col-lg-12 col-sm-12">
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/blackhole/todo-sobre-agujeros-negros.jpg" alt="">
-                                </div>
-                                <div class="single_post_text text-center">
-                                    <a href="contact.html"><h5> Divulgacion</h5></a> 
-                                    <a href="conferencia.html"><h2>Conferencia: Agujeros negros</h2></a>
-                                    <p>Publicado Mayo 5, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-					
-					<!--Melisa post4-->
-                    <div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/natacion/estilo.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-                    <a href="category.html"><h5>Entretenimiento</h5></a> 
-                                    <a href="Estilos_natacion.html"><h2>Estilos de Natación</h2></a> 
-                                    <p>Publicado Abril 30, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-
-					<!--Jesus post4-->
-                    <div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="https://asisebaila.com/wp-content/uploads/bfi_thumb/bailar-heels-dance-3491iovalf1hjqx7llu7vqtyr73ecigon6jsxoild1c10mbou.jpg" 
-									alt="" >
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="category.html"><h5>Entretenimiento</h5></a> 
-                                    <a href="baile.html"><h2>"Aprendamos a bailar"</h2></a> 
-                                    <p>Publicado Abril 30, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-						
-                         <!--Meliza post4-->
-                    <div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/lettering/post4/portada.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-                    <a href="category.html"><h5>Entretenimiento</h5></a> 
-                                    <a href="letteringp3.html"><h2>"¿Cómo practicar Lettering?"</h2></a> 
-                                    <p>Publicado Abril 30, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-                
-        <!--Efren 3-->
-        <div class="col-lg-12 col-sm-12">
-            <div class="single_post post_1 feature_post">
-                <div class="single_post_img">
-                    <img src="img/vgames/videojuegos.jpg" alt="">
-                </div>
-                <div class="single_post_text text-center">
-                    <a href="category.html"><h5> Entretenimiento</h5></a> 
-                    <a href="juegos-cuarentena.html"><h2>Viaja sin salir de casa: Jurgos para la cuarentena</h2></a>
-                    <p>Publicado Abril 27, 2020</p>
-                </div>
-            </div>
-        </div>
-			    <!--Daniel post 3-->
-          <div class="col-lg-12 col-sm-12">
-                          <div			    class="single_post post_1 feature_post">
-          <div class="single_post_img">
-                                  <img src="img/post/GR.jpg" alt="">
-                              </div>
-                              <div class="single_post_text text-center">
-          <a href="category.html"><h5> Entretenimiento</h5></a> 
-                                  <a href="ParquesMx.html"><h2>Parques de diversiones en México</h2></a>
-                                  <p>Publicado Abril 27, 2020</p>
-                              </div>
-                          </div>
-                      </div>
-
-                    <!--Efren 2-->
-        <div class="col-lg-12 col-sm-12">
-            <div class="single_post post_1 feature_post">
-                <div class="single_post_img">
-                    <img src="img/blackhole/Hawking_andEventHorizon2-150.jpg" alt="">
-                </div>
-                <div class="single_post_text text-center">
-                    <a href="contact.html"><h5> Divulgacion</h5></a> 
-                    <a href="radiacion-hawking.html"><h2>La radiación de Hawking</h2></a>
-                    <p>Publicado Abril 26, 2020</p>
-                </div>
-            </div>
-        </div>
-			    
-			    <!--Daniel post2-->
-          <div class="col-lg-12 col-sm-12">
-                          <div			    class="single_post post_1 feature_post">
-          <div class="single_post_img">
-                                  <img src="img/post/mr.jpg" alt="">
-                              </div>
-                              <div class="single_post_text text-center">
-          <a href="category.html"><h5> Entretenimiento</h5></a> 
-                                  <a href="RollerHistoria.html"><h2>La historia de las Montañas Rusas</h2></a>
-                                  <p>Publicado Abril 26, 2020</p>
-                              </div>
-                          </div>
-                      </div>
-					
-					<!--Jesus POST III-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="https://i1.wp.com/www.imageneseducativas.com/wp-content/uploads/2019/10/MANUALIDADES-CARTONES-DE-HUEVOS-PORTADA.jpg?fit=1150%2C600&ssl=1" 
-									alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="category.html"><h5>Entretenimiento</h5></a> 
-                                    <a href="manualidades.html"><h2>Combate el estres con Manualidades</h2></a> 
-                                    <p>Publicado Abril 24, 2020</p>
-                                </div>
-                            </div>
-                     </div>
-				
-			    <!--Meliza post3-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/lettering/post3/portada.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-				    <a href="category.html"><h5>Entretenimiento</h5></a> 
-                                    <a href="tendenciaM1.html"><h2>TikTok:Su historia y ¿Porqué es tendencia?</h2></a> 
-                                    <p>Publicado Abril 24, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-					
-						<!--Melisa pos3-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/natacion/ejercicio.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="archive.html"><h5> Estilo de Vida</h5></a> 
-                                    <a href="Ejercicios.html"><h2>Ejercicios para hacer en casa</h2></a> 
-                                    <p>Publicado Abril 24, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-						
-				<!--Meliza post2-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img\lettering\post2\tipos.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="category.html"><h5> Entretenimiento</h5></a> 
-                                    <a href="letteringp2.html"><h2>Tipos de Lettering</h2></a> 
-                                    <p>Publicado Abril 23, 2020</p>
-                                </div>
-                            </div>
-                        </div>	
-						
-	
-					<!--Melisa 2-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/natacion/principal.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="archive.html"><h5> Estilo de Vida</h5></a> 
-                                    <a href="nadadores.html"><h2>Mejores nadadores de la historia</h2></a> 
-                                    <p>Publicado Abril 23, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-				<!--Jesus POST II-->
-					<div class="col-lg-12"> <!--tamaño de la ventan o post-->
-                            <div class="single_post post_1 feature_post">
-                                <div class="single_post_img">
-                                    <img src="img/yoga/tipo_yoga.jpg" alt=""  width="550" height="250">
-                                </div>
-                                <div class="single_post_text text-center">
-									<a href="archive.html"><h5> Estilo de Vida</h5></a> 
-                                    <a href="yoga_postII.html"><h2>Tipos de Yoga</h2></a> 
-                                    <p>Publicado Abril 23, 2020</p>
-                                </div>
-                            </div>
-                        </div>
-			    
-                    </div>
-                    <div class="page_pageniation">
-                        <nav aria-label="Page navigation example">
-                            <ul class="pagination justify-content-center">
-                                <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Anterior</a>
-                                </li>
-                                <li class="page-item"><a class="page-link" href="#">1</a></li>
-                                <li class="page-item"><a class="page-link" href="page2.html">2</a></li>
-                                <li class="page-item">
-                                <a class="page-link" href="page2.html">Siguiente</a>
-                                </li>
-                            </ul>
-                        </nav>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="sidebar_widget">
-                        <div class="single_sidebar_wiget">
-                            <div class="sidebar_tittle">
-                            <h3>Categorias</h3>
-                            </div>
-                            <div class="single_catagory_item category">
-                            <ul class="list-unstyled">
-                                  <li><a href="archive.html">Estilo de vida</a> 
-                                  <li><a href="category.html">Entretenimiento</a> 
-                                  <li><a href="contact.html">Divulgacion</a> 
-                            </ul>
-                            </div>
-                      </div>
-                        
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-    <!-- feature_post end-->
-
-    <!-- social_connect_part part start-->
-    <section class="social_connect_part">
-        <div class="container-fluid">
-            <div class="row">
-                <div class="col-xl-12">
-                    <div class="social_connect">
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_1.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_2.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_3.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_4.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_5.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                    <div class="single-social_connect">
-                        <div class="social_connect_img">
-                            <img src="img/insta/instagram_6.png" class="" alt="blog">
-                            <div class="social_connect_overlay">
-                                <a href="#"><span class="ti-instagram"></span></a> 
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-        </div>
-    </section>
-    <!-- social_connect_part part end-->
-
-     <!-- footer part start-->
-	<footer class="footer-area">
-		<div class="container">
-			<div class="copyright_text">
-				<div class="row align-items-center">
-					<div class="col-lg-8">
-						<div class="copyright_part">
-							<p class="footer-text m-0">Copyright © 2019 All rights reserved <span class="px-2">|</span> This template is Made with <a href="http://colorlib.com"><i class="ti-heart"></i></a> by <a href="http://colorlib.com">Colorlib</a></p>
-						</div>
-					</div>
-					<div class="col-lg-4 text-center text-lg-right">
-						<div class="footer-social">
-							<a href="#"><i class="ti-facebook"></i></a>
-							<a href="#"> <i class="ti-twitter"></i> </a>
-							<a href="#"><i class="ti-instagram"></i></a>
-							<a href="#"><i class="ti-skype"></i></a>
-						</div>
-					</div>
-				</div>
-			</div>
+	<canvas id='canvas'>
+		HTML5 canvas appears to be unsupported in the current browser.<br />
+		Please try updating or use a different browser.
+	</canvas>
+	<div id='status'>
+		<div id='status-progress' style='display: none;' oncontextmenu='event.preventDefault();'><div id ='status-progress-inner'></div></div>
+		<div id='status-indeterminate' style='display: none;' oncontextmenu='event.preventDefault();'>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
+			<div></div>
 		</div>
-	</footer>
-    <!-- footer part end-->
-    <!-- jquery -->
-    <script src="js/jquery-1.12.1.min.js"></script>
-    <!-- popper js -->
-    <script src="js/popper.min.js"></script>
-    <!-- bootstrap js -->
-    <script src="js/bootstrap.min.js"></script>
-    <!-- custom js -->
-    <script src="js/custom.js"></script>
-</body>
+		<div id='status-notice' class='godot' style='display: none;'></div>
+	</div>
 
+	<script type='text/javascript' src='Index.js'></script>
+	<script type='text/javascript'>//<![CDATA[
+
+		var engine = new Engine;
+		var setStatusMode;
+		var setStatusNotice;
+
+		(function() {
+
+			const EXECUTABLE_NAME = 'Index';
+			const MAIN_PACK = 'Index.pck';
+			const INDETERMINATE_STATUS_STEP_MS = 100;
+
+			var canvas = document.getElementById('canvas');
+			var statusProgress = document.getElementById('status-progress');
+			var statusProgressInner = document.getElementById('status-progress-inner');
+			var statusIndeterminate = document.getElementById('status-indeterminate');
+			var statusNotice = document.getElementById('status-notice');
+
+			var initializing = true;
+			var statusMode = 'hidden';
+
+			var animationCallbacks = [];
+			function animate(time) {
+				animationCallbacks.forEach(callback => callback(time));
+				requestAnimationFrame(animate);
+			}
+			requestAnimationFrame(animate);
+
+			function adjustCanvasDimensions() {
+				var scale = window.devicePixelRatio || 1;
+				var width = window.innerWidth;
+				var height = window.innerHeight;
+				canvas.width = width * scale;
+				canvas.height = height * scale;
+				canvas.style.width = width + "px";
+				canvas.style.height = height + "px";
+			}
+			animationCallbacks.push(adjustCanvasDimensions);
+			adjustCanvasDimensions();
+
+			setStatusMode = function setStatusMode(mode) {
+
+				if (statusMode === mode || !initializing)
+					return;
+				[statusProgress, statusIndeterminate, statusNotice].forEach(elem => {
+					elem.style.display = 'none';
+				});
+				animationCallbacks = animationCallbacks.filter(function(value) {
+					return (value != animateStatusIndeterminate);
+				});
+				switch (mode) {
+					case 'progress':
+						statusProgress.style.display = 'block';
+						break;
+					case 'indeterminate':
+						statusIndeterminate.style.display = 'block';
+						animationCallbacks.push(animateStatusIndeterminate);
+						break;
+					case 'notice':
+						statusNotice.style.display = 'block';
+						break;
+					case 'hidden':
+						break;
+					default:
+						throw new Error('Invalid status mode');
+				}
+				statusMode = mode;
+			}
+
+			function animateStatusIndeterminate(ms) {
+
+				var i = Math.floor(ms / INDETERMINATE_STATUS_STEP_MS % 8);
+				if (statusIndeterminate.children[i].style.borderTopColor == '') {
+					Array.prototype.slice.call(statusIndeterminate.children).forEach(child => {
+						child.style.borderTopColor = '';
+					});
+					statusIndeterminate.children[i].style.borderTopColor = '#dfdfdf';
+				}
+			}
+
+			setStatusNotice = function setStatusNotice(text) {
+
+				while (statusNotice.lastChild) {
+					statusNotice.removeChild(statusNotice.lastChild);
+				}
+				var lines = text.split('\n');
+				lines.forEach((line) => {
+					statusNotice.appendChild(document.createTextNode(line));
+					statusNotice.appendChild(document.createElement('br'));
+				});
+			};
+
+			engine.setProgressFunc((current, total) => {
+
+				if (total > 0) {
+					statusProgressInner.style.width = current/total * 100 + '%';
+					setStatusMode('progress');
+					if (current === total) {
+						// wait for progress bar animation
+						setTimeout(() => {
+							setStatusMode('indeterminate');
+						}, 500);
+					}
+				} else {
+					setStatusMode('indeterminate');
+				}
+			});
+
+			function displayFailureNotice(err) {
+				var msg = err.message || err;
+				console.error(msg);
+				setStatusNotice(msg);
+				setStatusMode('notice');
+				initializing = false;
+			};
+
+			if (!Engine.isWebGLAvailable()) {
+				displayFailureNotice('WebGL not available');
+			} else {
+				setStatusMode('indeterminate');
+				engine.setCanvas(canvas);
+				engine.startGame(EXECUTABLE_NAME, MAIN_PACK).then(() => {
+					setStatusMode('hidden');
+					initializing = false;
+				}, displayFailureNotice);
+			}
+		})();
+	//]]></script>
+</body>
 </html>
+
