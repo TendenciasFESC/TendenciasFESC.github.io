@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/index.png-d22e45f6da08ad56957e550b1801127f.stex"
+path="res://.import/index.png-3689b023b58d47640a0427546da10397.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://galton/index.png"
-dest_files=[ "res://.import/index.png-d22e45f6da08ad56957e550b1801127f.stex" ]
+source_file="res://importa/index.png"
+dest_files=[ "res://.import/index.png-3689b023b58d47640a0427546da10397.stex" ]
 
 [params]
 
