@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>My Template</title>
+        <meta charset="UTF-8">
+    </head>
+    <body>
+        <canvas id="canvas"></canvas>
+        <script src="index.js"></script>
+        <script>
+            const myWasm = 'index';
+            const myPck = 'SOFUNI.pck';
+            const engine = new Engine();
+            Promise.all([
+            // Load and init the engine
+                engine.init(myWasm),
+            // And the pck concurrently
+                engine.preloadFile(myPck),
+            ]).then(() => {
+            // Now start the engine.
+                return engine.start({ args: ['--main-pack', myPck] });
+            }).then(() => {
+                console.log('Engine has started!');
+            });
+            //var engine = new Engine({"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"fp2.pck":595312,"index.wasm":12665632},"gdnativeLibs":[]});
+            //engine.startGame();
+        </script>
+    </body>
+</html>
