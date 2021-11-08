@@ -144,12 +144,7 @@
             engine.init(myWasm),
         // And the pck concurrently
             engine.preloadFile(myPck),
-        ]).then(() => {
-        // Now start the engine.
-            return engine.start({ args: ['--main-pack', myPck] });
-        }).then(() => {
-            console.log('Engine has started!');
-        });
+        ]);
 		(function() {
 			const INDETERMINATE_STATUS_STEP_MS = 100;
 			var statusProgress = document.getElementById('status-progress');
@@ -229,22 +224,7 @@
 				displayFailureNotice('WebGL not available');
 			} else {
 				setStatusMode('indeterminate');
-				engine.startGame({
-					'onProgress': function (current, total) {
-						if (total > 0) {
-							statusProgressInner.style.width = current/total * 100 + '%';
-							setStatusMode('progress');
-							if (current === total) {
-								// wait for progress bar animation
-								setTimeout(() => {
-									setStatusMode('indeterminate');
-								}, 500);
-							}
-						} else {
-							setStatusMode('indeterminate');
-						}
-					},
-				}).then(() => {
+				engine.start({ args: ['--main-pack', myPck] }).then(() => {
 					setStatusMode('hidden');
 					initializing = false;
 				}, displayFailureNotice);
