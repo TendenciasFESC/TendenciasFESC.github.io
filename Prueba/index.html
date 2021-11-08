@@ -136,8 +136,15 @@
 	<script type='text/javascript' src='index.js'></script>
 	<script type='text/javascript'>//<![CDATA[
 
-		const GODOT_CONFIG = {"args":[],"canvasResizePolicy":2,"executable":"index","experimentalVK":false,"fileSizes":{"index.pck":829984,"index.wasm":12665632},"gdnativeLibs":[]};
-		var engine = new Engine(GODOT_CONFIG);
+		const myWasm = 'Practica3';
+        const myPck = 'MDI.pck';
+        const engine = new Engine();
+        Promise.all([
+        // Load and init the engine
+            engine.init(myWasm),
+        // And the pck concurrently
+            engine.preloadFile(myPck),
+        ]);
 
 		(function() {
 			const INDETERMINATE_STATUS_STEP_MS = 100;
@@ -218,25 +225,10 @@
 				displayFailureNotice('WebGL not available');
 			} else {
 				setStatusMode('indeterminate');
-				engine.startGame({
-					'onProgress': function (current, total) {
-						if (total > 0) {
-							statusProgressInner.style.width = current/total * 100 + '%';
-							setStatusMode('progress');
-							if (current === total) {
-								// wait for progress bar animation
-								setTimeout(() => {
-									setStatusMode('indeterminate');
-								}, 500);
-							}
-						} else {
-							setStatusMode('indeterminate');
-						}
-					},
-				}).then(() => {
+				engine.start({ args: ['--main-pack', myPck] }).then(() => {
 					setStatusMode('hidden');
 					initializing = false;
-				}, displayFailureNotice);
+				});
 			}
 		})();
 	//]]></script>

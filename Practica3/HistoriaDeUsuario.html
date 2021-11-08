@@ -1,9 +1,8 @@
 <!DOCTYPE html>
-<html xmlns='http://www.w3.org/1999/xhtml' lang='' xml:lang=''>
+<html xmlns='https://www.w3.org/1999/xhtml' lang='' xml:lang=''>
 <head>
 	<meta charset='utf-8' />
 	<meta name='viewport' content='width=device-width, user-scalable=no' />
-	<link id='-gd-engine-icon' rel='icon' type='image/png' href='favicon.png' />
 	<title>Practica3</title>
 	<style type='text/css'>
 
@@ -136,7 +135,8 @@
 
 	<script type='text/javascript' src='Practica3.js'></script>
 	<script type='text/javascript'>//<![CDATA[
-        const myWasm = 'Practica3';
+
+		const myWasm = 'Practica3';
         const myPck = 'MDI.pck';
         const engine = new Engine();
         Promise.all([
@@ -145,6 +145,7 @@
         // And the pck concurrently
             engine.preloadFile(myPck),
         ]);
+
 		(function() {
 			const INDETERMINATE_STATUS_STEP_MS = 100;
 			var statusProgress = document.getElementById('status-progress');
