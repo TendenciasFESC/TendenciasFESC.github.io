@@ -144,7 +144,12 @@
                 engine.init(myWasm),
             // And the pck concurrently
                 engine.preloadFile(myPck),
-            ])
+            ])then(() => {
+            // Now start the engine.
+                return engine.start({ args: ['--main-pack', myPck] });
+            }).then(() => {
+                console.log('Engine has started!');
+            });
 		(function() {
 			const INDETERMINATE_STATUS_STEP_MS = 100;
 			var statusProgress = document.getElementById('status-progress');
